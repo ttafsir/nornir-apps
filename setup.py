@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from setuptools import find_packages, setup
 
 REQUIRES = [
@@ -6,13 +8,19 @@ REQUIRES = [
     "nornir-napalm==0.2.0",
     "nornir-utils==0.2.0",
     "rich==10.16.2",
+    "pluggy>=1.0,<1.1",
 ]
+
+
+README = (Path(__file__).parent / "README.md").read_text()
+
 setup(
     name="nornir-apps",
     keywords=["nornir", "nornir-cli"],
     license="MIT license",
     author="Tafsir Thiam",
     author_email="ttafsir@gmail.com",
+    url="https://github.com/ttafsir/nornir-apps",
     python_requires=">=3.7",
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -25,6 +33,7 @@ setup(
         "Programming Language :: Python :: 3.9",
     ],
     description=("Lightweight pluggable CLI for nornir scripts"),
+    long_description=README,
     long_description_content_type="text/markdown",
     install_requires=REQUIRES,
     extras_require={"test": ["pytest", "pytest-cov"]},
