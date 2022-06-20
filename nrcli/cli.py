@@ -25,8 +25,7 @@ def _parse_filter(expression: str) -> Tuple[Tuple]:
 
 @click.command()
 @click.option("--all", help="Include default plugins", is_flag=True)
-@click.pass_context
-def plugins(ctx, all):
+def plugins(all):
     """List available plugins"""
     all_plugins = pm.get_plugins()
     plugin_list = [

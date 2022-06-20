@@ -1,5 +1,3 @@
-import os
-
 from click.testing import Result
 from nrcli.plugins import DEFAULT_PLUGINS
 from nrcli.version import __version__
