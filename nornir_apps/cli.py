@@ -3,10 +3,10 @@ from typing import Tuple
 import click
 from nornir import InitNornir
 
-from nrcli.console import print_result
-from nrcli.plugins import DEFAULT_PLUGINS
-from nrcli.plugins import plugin_manager as pm
-from nrcli.version import __version__
+from nornir_apps.console import print_result
+from nornir_apps.plugins import DEFAULT_PLUGINS
+from nornir_apps.plugins import plugin_manager as pm
+from nornir_apps.version import __version__
 
 
 class Config:
@@ -85,4 +85,4 @@ def cli(ctx, init_file, host_filter):
 
 cli.add_command(plugins)
 # Register sub command plugins
-pm.hook.add_subcommand(nrcli=cli)
+pm.hook.add_subcommand(nornir_apps=cli)

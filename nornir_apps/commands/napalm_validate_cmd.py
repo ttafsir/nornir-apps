@@ -1,14 +1,14 @@
 import click
 from nornir_napalm.plugins.tasks import napalm_validate
-from nrcli.commands.common import add_common_options
-from nrcli.hookspecs import hookimpl
+from nornir_apps.commands.common import add_common_options
+from nornir_apps.hookspecs import hookimpl
 
 
 @hookimpl
-def add_subcommand(nrcli):
-    """Add subcommand to NRCLI"""
+def add_subcommand(nornir_apps):
+    """Add subcommand to nornir_apps"""
 
-    @nrcli.command(name="napalm-validate")
+    @nornir_apps.command(name="napalm-validate")
     @click.option(
         "-s",
         "--src",

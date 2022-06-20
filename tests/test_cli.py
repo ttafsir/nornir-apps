@@ -1,6 +1,6 @@
 from click.testing import Result
-from nrcli.plugins import DEFAULT_PLUGINS
-from nrcli.version import __version__
+from nornir_apps.plugins import DEFAULT_PLUGINS
+from nornir_apps.version import __version__
 
 
 class TestCli:
