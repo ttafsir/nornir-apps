@@ -6,6 +6,7 @@ REQUIRES = [
     "nornir-napalm==0.2.0",
     "nornir-utils==0.2.0",
     "rich==10.16.2",
+    "pluggy>=1.0,<1.1",
 ]
 setup(
     name="nornir-apps",
