@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 from click.testing import CliRunner, Result
-from nrcli.cli import cli
+from nornir_apps.cli import cli
 
 CONFIG = """
 ---

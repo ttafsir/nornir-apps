@@ -8,7 +8,7 @@ REQUIRES = [
     "rich==10.16.2",
 ]
 setup(
-    name="nrcli",
+    name="nornir-apps",
     keywords=["nornir", "nornir-cli"],
     license="MIT license",
     author="Tafsir Thiam",
@@ -24,14 +24,15 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
     ],
-    description=("Lightweight pluggable CLI wrapper for Nornir"),
+    description=("Lightweight pluggable CLI for nornir scripts"),
     long_description_content_type="text/markdown",
     install_requires=REQUIRES,
     extras_require={"test": ["pytest", "pytest-cov"]},
     packages=find_packages(exclude=("tests",)),
     entry_points={
         "console_scripts": [
-            "nrcli=nrcli.cli:cli",
+            "nornir-app=nornir_apps.cli:cli",
+            "nornir-apps=nornir_apps.cli:cli",
         ],
     },
     include_package_data=True,

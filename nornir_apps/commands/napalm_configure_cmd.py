@@ -1,14 +1,14 @@
 import click
 from nornir_napalm.plugins.tasks import napalm_configure
-from nrcli.commands.common import add_common_options
-from nrcli.hookspecs import hookimpl
+from nornir_apps.commands.common import add_common_options
+from nornir_apps.hookspecs import hookimpl
 
 
 @hookimpl
-def add_subcommand(nrcli):
-    """Add subcommand to NRCLI"""
+def add_subcommand(nornir_apps):
+    """Add subcommand to nornir_apps"""
 
-    @nrcli.command(name="napalm-configure")
+    @nornir_apps.command(name="napalm-configure")
     @click.option("--dry-run", is_flag=True, default=False)
     @click.option("-c", "--config", help="config to load into the device")
     @click.option(

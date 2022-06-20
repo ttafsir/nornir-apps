@@ -1,24 +1,28 @@
-# NRCLI
+# NORNIR-APPS
 
 Pluggable Network CLI tool built on top of Nornir and Napalm
 
 ## Why do I need this?
 
-`nrcli` is a lightweight wrapper around Nornir and Napalm and it provides a CLI that makes it easy to plugin Nornir-based scripts you have. The ClI tool comes with a few plugins that use the `nornir_napalm` tools that may already be suitable for quick tasks. However, you can easily add to the CLI by writing your own plugin.
+`nornir_apps` is a lightweight wrapper around Nornir and Napalm and it provides a CLI that makes it easy to plugin Nornir-based scripts you have. The ClI tool comes with a few plugins that use the `nornir_napalm` tools that may already be suitable for quick tasks. However, you can easily add to the CLI by writing your own plugin.
 
 ## Getting Started
 
 ### Installation
 
-Install `nrcli` using pip:
+Install `nornir_apps` using pip:
 
 ```sh
-pip install nrcli
+pip install nornir-apps
 ```
 
 ### Configure your Nornir inventory and Initialization config
 
-#### Sample hosts file
+You can use your existing nornir configuration files and inventory without any modifications. By default, `nornir_apps` looks for a `config.yaml` file in the root of directory from which you're using the `nornir-app` CLI command. You can pass another file using the `-i` or `--init-file` flag as well. You can review sample configuration and inventory files below. They are samples from the [examples](./examples/) directory in the root of this repo.
+
+<details>
+
+  <summary>Sample hosts file</summary>
 
 ```yaml
 # examples/inventory/hosts.yaml
@@ -31,7 +35,11 @@ cat9k:
     - cisco_iosxe
 ```
 
-#### Sample Groups file
+</details>
+
+<details>
+
+  <summary>Sample Groups file</summary>
 
 ```yaml
 # examples/inventory/groups.yaml
@@ -49,7 +57,11 @@ cisco_iosxe:
           conn_timeout: 30
 ```
 
-### Nornir Initialization file
+</details>
+
+<details>
+
+  <summary>Nornir Initialization file</summary>
 
 ```yaml
 ---
@@ -72,14 +84,16 @@ inventory:
     defaults_file: "inventory/defaults.yaml"
 ```
 
-### Use the CLI
+</details>
+
+### Getting Started with the CLI
 
 #### View available commands
 
-Use `nrcli --help` to view the included commands based on the `napalm_nornir` project. Any plugin that you create and register will show as an available command in the future.
+Use `nornir_apps --help` to view the included commands based on the `napalm_nornir` project. Any plugin that you create and register will show as an available command in the future.
 
 ```sh
-➜ nrcli --help
+➜ nornir_app --help
 
 <OUPUT OMMITTED>
 
@@ -93,19 +107,19 @@ Commands:
 #### Examples
 
 ```sh
-nrcli -i inventory/config.yaml -h cat9k napalm-ping -d 8.8.8.8
+nornir_app -i inventory/config.yaml -h cat9k napalm-ping -d 8.8.8.8
 ```
 
 > Note: the CLI looks for a `config.yaml` file by default to initiliaze Nornir
 
-If you have a `config.yaml` file present, you can simply try:
+If you have a `config.yaml` file present in the current directory, you can omit the `-i` flag:
 
 ```sh
-nrcli --host-filter cat9k napalm-ping -d 8.8.8.8
+nornir_app -h cat9k napalm-ping -d 8.8.8.8
 ```
 
 The `-h` or `--host-filter` option allows you to pass a simple filter to the inventory for host selection.
 
 ```sh
-nrcli -h platform=ios,role=router napalm-ping -d 8.8.8.8
+nornir_app -h platform=ios,role=router napalm-ping -d 8.8.8.8
 ```
