@@ -1,0 +1,12 @@
+---
+cisco_iosxe:
+  platform: ios
+  data:
+    role: router
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          fast_cli: False
+          secret: cisco
+          conn_timeout: 30

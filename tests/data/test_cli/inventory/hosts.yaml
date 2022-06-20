@@ -1,0 +1,7 @@
+cat9k:
+  hostname: 10.253.175.87
+  port: 22
+  username: cisco
+  password: cisco
+  groups:
+    - cisco_iosxe

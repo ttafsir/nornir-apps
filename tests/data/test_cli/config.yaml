@@ -1,0 +1,18 @@
+---
+core:
+  raise_on_error: False
+
+runner:
+  plugin: threaded
+  options:
+    num_workers: 100
+
+logging:
+  enabled: True
+
+inventory:
+  plugin: SimpleInventory
+  options:
+    host_file: "inventory/hosts.yaml"
+    group_file: "inventory/groups.yaml"
+    defaults_file: "inventory/defaults.yaml"
