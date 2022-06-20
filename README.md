@@ -13,7 +13,7 @@ Pluggable Network CLI tool built on top of Nornir and Napalm
 Install `nornir_apps` using pip:
 
 ```sh
-pip install nornir_apps
+pip install nornir-apps
 ```
 
 ### Configure your Nornir inventory and Initialization config
