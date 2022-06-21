@@ -14,10 +14,19 @@ REQUIRES = [
 
 README = (Path(__file__).parent / "README.md").read_text()
 
+
+def get_version():
+    """Get version"""
+    global_vars = {}
+    exec(Path("nornir_apps/version.py").read_text(), global_vars)
+    return global_vars["__version__"]
+
+
 setup(
     name="nornir-apps",
     keywords=["nornir", "nornir-cli"],
     license="MIT license",
+    version=get_version(),
     author="Tafsir Thiam",
     author_email="ttafsir@gmail.com",
     url="https://github.com/ttafsir/nornir-apps",
