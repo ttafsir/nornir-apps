@@ -34,8 +34,6 @@ future==0.18.2
     #   textfsm
 idna==3.3
     # via requests
-importlib-metadata==4.11.4
-    # via nornir
 jinja2==3.1.2
     # via
     #   junos-eznc
@@ -44,7 +42,7 @@ junos-eznc==2.6.4
     # via napalm
 loguru==0.6.0
     # via ciscoconfparse
-lxml==4.9.0
+lxml==4.9.1
     # via
     #   junos-eznc
     #   napalm
@@ -160,8 +158,6 @@ urllib3==1.26.9
     # via requests
 yamlordereddictloader==0.4.0
     # via junos-eznc
-zipp==3.8.0
-    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
